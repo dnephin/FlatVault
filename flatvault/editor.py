@@ -62,4 +62,6 @@ def edit_file(filename):
     if not file_modified(tmp_file, modified):
         raise SystemExit("Cancelled: No changes.")
 
-    save_ciphertext(tmp_file, filename, pass_key)
+    new_pass = getpass.getpass("New Password ? ")
+    save_key = new_pass or pass_key
+    save_ciphertext(tmp_file, filename, save_key)

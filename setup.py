@@ -6,7 +6,7 @@ except ImportError:
 
 setup(
     name="FlatVault",
-    version="0.1",
+    version="0.2",
     provides=["flatvault"],
     author="Daniel Nephin",
     author_email="dnephin@gmail.com",
