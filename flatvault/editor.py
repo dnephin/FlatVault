@@ -1,6 +1,7 @@
 """
  Edit a file.
 """
+from __future__ import print_function
 import getpass
 import os
 import os.path
@@ -25,7 +26,7 @@ def run_editor(tmp_filename):
 
 def get_plaintext(filename, pass_key):
     try:
-        with open(filename, 'r') as f:
+        with open(filename, 'rb') as f:
             return crypt.decrypt(f.read(), pass_key)
     except IOError:
         return ""
@@ -33,7 +34,7 @@ def get_plaintext(filename, pass_key):
 
 def create_temp_file(source):
     tmp_file = tempfile.NamedTemporaryFile()
-    print >> sys.stderr, "Using tempfile %s" % tmp_file.name
+    print("Using tempfile %s" % tmp_file.name, file=sys.stderr)
     tmp_file.write(source)
     tmp_file.flush()
     return tmp_file

@@ -14,5 +14,7 @@ setup(
     description='Encrypt flat files.',
     packages=['flatvault'],
     install_requires=['pycrypto'],
-    scripts=['bin/flatvaultedit']
+    entry_points={
+        "console_scripts": ["flatvaultedit= flatvault.main:main"]
+    },
 )

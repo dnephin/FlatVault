@@ -17,7 +17,7 @@ def get_padding(source_length, block_size=BLOCK):
 
 
 def strip_padding(source):
-    return source.rsplit(chr(0), 1)[0]
+    return source.rsplit(chr(0).encode('utf-8'), 1)[0]
 
 
 def encrypt(source, key):
